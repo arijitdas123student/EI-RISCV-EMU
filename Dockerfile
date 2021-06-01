@@ -7,7 +7,7 @@ MAINTAINER Arijit Das (arijitdas18022006@gmail.com)
 RUN apt-get update && apt-get upgrade -y
 
 #Installing dependencies for Edge Impulse Linux Python SDK 
-RUN apt-get install -y python3-pip\
+RUN apt-get install -y python3-pip \
     git 
 
 #Installing edge_impulse_linux python example repository
