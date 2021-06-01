@@ -6,13 +6,14 @@ MAINTAINER Arijit Das (arijitdas18022006@gmail.com)
 #Basic apt-get's
 RUN apt-get update && apt-get upgrade -y
 
-#Installing dependencies for Edge Impulse Linux 
+#Installing dependencies for Edge Impulse Linux Python SDK 
 RUN apt-get install -y python3-pip\
     git 
 
 #Installing edge_impulse_linux python example repository
 RUN git clone https://github.com/edgeimpulse/linux-sdk-python 
 
+RUN apt-get install -y python3-pyaudio
 #Into the folder and installing dependencies
 RUN cd linux-sdk-python && pip3 install -r requirements.txt
     
