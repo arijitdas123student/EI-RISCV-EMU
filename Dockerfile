@@ -13,7 +13,12 @@ RUN apt-get install -y python3-pip\
 #Installing edge_impulse_linux python example repository
 RUN git clone https://github.com/edgeimpulse/linux-sdk-python 
 
+#Installing pyaudio to replace error caused by requirements.txt
 RUN apt-get install -y python3-pyaudio
+
 #Into the folder and installing dependencies
 RUN cd linux-sdk-python && pip3 install -r requirements.txt
     
+#Into the folder and running audio example
+RUN cd linux-sdk-python/examples/audio \
+    python3 classify.py    
